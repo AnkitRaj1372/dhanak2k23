@@ -29,8 +29,12 @@
 .navlist li{
     text-align: center;
     font-size: 1rem;
-    color: rgb(238, 238, 245);
     font-weight: 800;
+}
+
+.navlist li a{
+    color: rgb(238, 238, 245);
+    text-decoration: none;
 }
 
 .navlist li:nth-child(2){
@@ -134,7 +138,11 @@
         font-size: 1.5em;
         margin-top: 2vh;
         margin-bottom: 2vh;
+    }
+
+    .mobnavlist li a{
         color: rgb(238, 238, 245);
+        text-decoration: none;
     }
 }
 
