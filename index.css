@@ -186,7 +186,6 @@ body {
         flex-direction: column;
         background-color: rgba(6, 6, 4, 0.8);
         list-style: none;
-        /* animation: comeIn 0.5s; */
         transition: all .5s ease-in-out;
     }
 
@@ -199,15 +198,5 @@ body {
     .mobnavlist li a {
         color: rgb(238, 238, 245);
         text-decoration: none;
-    }
-}
-
-@keyframes comeIn {
-    0% {
-        left: 100vw;
-    }
-
-    100% {
-        left: 30vw;
     }
 }
