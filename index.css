@@ -1,16 +1,23 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.castle{
+
+body {
+    background-color: rgb(1, 0, 0);
+    color: white;
+}
+
+.castle {
     height: 100vh;
     background-image: url("castle.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     /* background-position: center; */
 }
-.navlist{
+
+.navlist {
     position: fixed;
     top: 0;
     width: 100vw;
@@ -26,35 +33,36 @@
     background-color: rgba(6, 6, 4, 0.8);
 
 }
-.navlist li{
+
+.navlist li {
     text-align: center;
     font-size: 1rem;
     font-weight: 800;
 }
 
-.navlist li a{
+.navlist li a {
     color: rgb(238, 238, 245);
     text-decoration: none;
 }
 
-.navlist li:nth-child(2){
+.navlist li:nth-child(2) {
     margin-left: 30px;
     margin-right: 30px;
 }
 
-.mainbody{
+.mainbody {
     margin: 2vh;
 }
 
-.mainbody .cover1{
+.mainbody .cover1 {
     position: relative;
-    border: solid red 2px;
+    border: solid rgb(192, 186, 186) 2px;
     margin: 0.6em;
     padding: 1em;
     border-radius: 1em;
 }
 
-.mainbody .cover1 img{
+.mainbody .cover1 img {
     float: left;
     max-width: 50vw;
     margin-right: 0.5em;
@@ -62,85 +70,133 @@
 }
 
 @media only screen and (min-width: 500px) {
-    .navlist li{
+    .navlist li {
         text-align: center;
         font-size: 1.3rem;
         color: rgb(238, 238, 245);
         font-weight: 800;
     }
-    
-    .navlist li:nth-child(2){
+
+    .navlist li:nth-child(2) {
         margin-left: 40px;
         margin-right: 40px;
     }
 }
 
 @media only screen and (min-width: 900px) {
-    .navlist li{
+    .navlist li {
         text-align: center;
         font-size: 1.5rem;
         color: rgb(238, 238, 245);
         font-weight: 800;
     }
-    
-    .navlist li:nth-child(2){
+
+    .navlist li:nth-child(2) {
         margin-left: 50px;
         margin-right: 50px;
     }
 }
 
-.menu{
+.menu {
     display: none;
 }
 
-.mobnavbar{
+.mobnavbar {
     display: none;
 }
 
 
 @media only screen and (max-width: 500px) {
 
-    .pcnavbar{
+    .pcnavbar {
         display: none;
     }
 
-    .mobnavbar{
+    .mobnavbar {
         display: block;
     }
 
-    .menu{
+    .menu {
         display: inline;
         position: fixed;
         right: 10px;
         top: 10px;
         height: 48px;
         width: 48px;
-        z-index: 100;
+        z-index: 1000;
     }
 
-    .mobnavlist{
+    .menu .menubtn {
+        margin-top: 20px;
+        width: 35px;
+        height: 6px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        transition: all .5s ease-in-out;
+    }
+
+    .menu .menubtn::before {
+        content: '';
+        position: absolute;
+        width: 35px;
+        height: 6px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        transition: all .5s ease-in-out;
+        transform: translateY(-12px);
+    }
+    .menu .menubtn::after {
+        content: '';
+        position: absolute;
+        width: 35px;
+        height: 6px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        transition: all .5s ease-in-out;
+        transform: translateY(12px);
+    }
+
+    .menu.open .menubtn{
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+      }
+      .menu.open .menubtn::before {
+        transform: rotate(45deg) translate(35px, -35px);
+      }
+      .menu.open .menubtn::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+      }
+
+    .mobnavlist {
         width: 70vw;
         height: 100vh;
         position: fixed;
         z-index: 100;
         top: 0;
-        left: 30vw;
-        display: none;
+        left: 100vw;
+        display: flex;
         padding: 2em;
+        padding-top: 5em;
         align-items: center;
         justify-content: start;
         flex-direction: column;
         background-color: rgba(6, 6, 4, 0.8);
         list-style: none;
-        animation: comeIn 0.5s;
+        /* animation: comeIn 0.5s; */
+        transition: all .5s ease-in-out;
     }
-    .mobnavlist li{
+
+    .mobnavlist li {
         font-size: 1.5em;
         margin-top: 2vh;
         margin-bottom: 2vh;
     }
 
-    .mobnavlist li a{
+    .mobnavlist li a {
         color: rgb(238, 238, 245);
         text-decoration: none;
     }
@@ -151,7 +207,7 @@
         left: 100vw;
     }
 
-    100%{
+    100% {
         left: 30vw;
     }
 }
